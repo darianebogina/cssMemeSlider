@@ -12,19 +12,29 @@
 
 <body>
     <div class="slider">
-        <div class="slider_memes">
-            <div class="meme" id="meme1">
+        <input type="radio" name="meme_btn" id="meme1" checked>
+        <input type="radio" name="meme_btn" id="meme2">
+        <input type="radio" name="meme_btn" id="meme3">
+        <input type="radio" name="meme_btn" id="meme4">
+        <div class="slides">
+            <div class="meme">
                 <img src="./pictures/front.jpg" alt="meme_about_frontend">
             </div>
-            <div class="meme" id="meme2">
+            <div class="meme">
                 <img src="./pictures/cat.jpg" alt="cat">
             </div>
-            <div class="meme" id="meme3">
+            <div class="meme">
                 <img src="./pictures/shrek.jpg" alt="shrek">
             </div>
-            <div class="meme" id="meme4">
+            <div class="meme">
                 <img src="./pictures/wine_cat.jpg" alt="cat&wine">
             </div>
+        </div>
+        <div class="controls">
+            <label for="meme1" class="button"></label>
+            <label for="meme2" class="button"></label>
+            <label for="meme3" class="button"></label>
+            <label for="meme4" class="button"></label>
         </div>
     </div>
 </body>

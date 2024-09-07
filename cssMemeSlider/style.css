@@ -9,3 +9,37 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    max-width: 1024px;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+}
+
+.meme {
+    width: 100%;
+}
+
+.meme>img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#meme1:checked ~ .slides {
+    margin-left: 0;
+}
+#meme2:checked ~ .slides {
+    margin-left: -100%;
+}
+#meme3:checked ~ .slides {
+    margin-left: -200%;
+}
+#meme4:checked ~ .slides {
+    margin-left: -300%;
+}
