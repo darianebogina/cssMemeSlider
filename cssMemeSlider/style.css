@@ -13,26 +13,32 @@ body {
 }
 
 .slider {
-    /* width: 90vh; */
+    display: grid;
+    grid-template-rows: 1fr auto;
     max-width: 1080px;
     margin: 0;
     padding: 2vh;
     overflow: hidden;
     background-color: rgb(37, 40, 42);
+    border: 1px solid yellow;
 }
 
 .slides {
     display: flex;
     width: 400%;
+    grid-row: 1;
     transition: margin-left 0.7s ease-in;
+
 }
 
 .meme {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin: 0;
     padding: 2vh;
+    border: 1px solid beige;
 }
 
 .meme>img {
@@ -44,10 +50,52 @@ body {
     border-radius: 1rem;
 }
 
+.bottom {
+    grid-row: 2; 
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.texts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid white;
+    text-align: center;
+}
+
 .text {
-    margin-top: 1rem;
     font-size: 1.2rem;
     color: rgb(254, 254, 254);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 1px solid tomato;
+}
+
+.controls > label {
+    height: 1em;
+    width: 1em;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(77,195,255);
+}
+
+.controls > label:hover {
+    background-color: rgb(254, 254, 254);
+}
+
+input {
+    display: none;
 }
 
 #meme1:checked ~ .slides {
