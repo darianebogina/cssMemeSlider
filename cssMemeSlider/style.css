@@ -20,15 +20,13 @@ body {
     padding: 2vh;
     overflow: hidden;
     background-color: rgb(37, 40, 42);
-    border: 1px solid yellow;
 }
 
 .slides {
     display: flex;
     width: 400%;
     grid-row: 1;
-    transition: margin-left 0.7s ease-in;
-
+    transition: margin-left 0.7s ease-in-out;
 }
 
 .meme {
@@ -38,10 +36,9 @@ body {
     width: 100%;
     margin: 0;
     padding: 2vh;
-    border: 1px solid beige;
 }
 
-.meme>img {
+.meme img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -51,34 +48,52 @@ body {
 }
 
 .bottom {
-    grid-row: 2; 
-    display: grid;
-    grid-template-columns: 2fr 1fr; 
-    width: 100%;
-    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 .texts {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border: 1px solid white;
-    text-align: center;
 }
 
 .text {
+    position: absolute;
+    opacity: 0;
     font-size: 1.2rem;
     color: rgb(254, 254, 254);
+    transition: transform 0.7s ease-in-out;
+    transform: translateX(20px);
+}
+
+#meme1:checked ~ .bottom #text1 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#meme2:checked ~ .bottom #text2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#meme3:checked ~ .bottom #text3 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#meme4:checked ~ .bottom #text4 {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    border: 1px solid tomato;
+    gap: 0.5rem;
 }
 
 .controls > label {
@@ -87,7 +102,7 @@ body {
     border: 1px solid white;
     border-radius: 50%;
     cursor: pointer;
-    background-color: rgb(77,195,255);
+    background-color: rgb(77, 195, 255);
 }
 
 .controls > label:hover {
