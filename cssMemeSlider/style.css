@@ -15,6 +15,7 @@ body {
 .slider {
     display: grid;
     grid-template-rows: 1fr auto;
+    width: 100%;
     max-width: 1080px;
     margin: 0;
     padding: 2vh;
@@ -51,10 +52,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1.1rem;
 }
 
 .texts {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -142,4 +144,53 @@ input {
 }
 #meme4:checked ~ .slides {
     margin-left: -300%;
+}
+
+@media (max-width: 500px) {
+    .slider {
+        width: 100%;
+        max-width: none;
+        padding: 1vh;
+    }
+
+    .slides {
+        width: 400%; 
+    }
+
+    .meme {
+        padding: 1vh;
+    }
+
+    .meme>img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .bottom {
+        flex-direction: column; 
+        padding: 1vh;
+    }
+
+    .texts {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .text {
+        font-size: 4vw;
+    }
+
+    .controls {
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .controls > label {
+        height: 3vw; 
+        width: 3vw;
+    }
 }
