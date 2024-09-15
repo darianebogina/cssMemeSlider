@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(8, 55, 86);
+}
+
+.slider {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    width: 100%;
+    max-width: 67.5rem;
+    margin: 0;
+    padding: 2vh;
+    overflow: hidden;
+    background-color: rgb(37, 40, 42);
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    grid-row: 1;
+    transition: margin-left 0.7s ease-in-out;
+}
+
+.meme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 2vh;
+}
+
+.meme>img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border-radius: 1rem;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem;
+}
+
+.texts {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.text {
+    position: absolute;
+    opacity: 0;
+    font-size: 1.2rem;
+    color: rgb(254, 254, 254);
+    transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
+    transform: translateX(1.25rem);
+}
+
+#meme1:checked ~ .bottom #text1 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#meme2:checked ~ .bottom #text2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#meme3:checked ~ .bottom #text3 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#meme4:checked ~ .bottom #text4 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.controls > label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+.controls > label span {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-color: rgb(45, 73, 200);
+    border: 0.0625rem solid rgb(45, 73, 200);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#meme1:checked ~ .bottom .controls label[for="meme1"] span,
+#meme2:checked ~ .bottom .controls label[for="meme2"] span,
+#meme3:checked ~ .bottom .controls label[for="meme3"] span,
+#meme4:checked ~ .bottom .controls label[for="meme4"] span {
+    background-color: transparent;
+    border: 0.125rem solid rgb(45, 73, 200);
+}
+
+#meme1:checked ~ .bottom .controls label[for="meme1"]:hover span,
+#meme2:checked ~ .bottom .controls label[for="meme2"]:hover span,
+#meme3:checked ~ .bottom .controls label[for="meme3"]:hover span,
+#meme4:checked ~ .bottom .controls label[for="meme4"]:hover span {
+    background-color: transparent;
+    border: 0.125rem solid rgb(254, 254, 254);
+}
+
+.controls > label:hover span{
+    background-color: rgb(254, 254, 254);
+    border: 0.0625rem solid rgb(254, 254, 254);
+}
+
+input {
+    display: none;
+}
+
+#meme1:checked ~ .slides {
+    margin-left: 0;
+}
+#meme2:checked ~ .slides {
+    margin-left: -100%;
+}
+#meme3:checked ~ .slides {
+    margin-left: -200%;
+}
+#meme4:checked ~ .slides {
+    margin-left: -300%;
+}
+
+@media (max-width: 500px) {
+    .slider {
+        width: 100%;
+        max-width: none;
+        padding: 1vh;
+    }
+
+    .slides {
+        order: 1;
+        width: 400%; 
+    }
+
+    .meme {
+        padding: 1vh;
+    }
+
+    .meme>img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .bottom {
+        order: 2;
+        flex-direction: column; 
+        padding: 1vh;
+    }
+
+    .texts {
+        order: 4;
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .text {
+        font-size: 4vw;
+    }
+
+    .controls {
+        order: 3;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        /* margin-top: 1rem; */
+    }
+    .controls > label span{
+        height: 3vw; 
+        width: 3vw;
+    }
+}
